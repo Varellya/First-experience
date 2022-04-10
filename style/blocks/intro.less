@@ -1,0 +1,172 @@
+// main: ../style.less
+
+.intro {
+    height: 455px;
+    background: url(../img/cover.png) no-repeat center;
+    background-size: cover;
+}
+
+.intro_slider {
+    position: relative;
+
+    height: 100%;
+}
+
+.slider_inner {
+    display: flex;
+
+    padding-top: 17rem;
+
+    span {
+        position: absolute;
+        top: 17rem;
+        z-index: 1;
+
+        display: flex;
+
+        cursor: pointer;
+
+        transition: transform .15s linear;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.btn_prev {
+    left: 0;
+}
+
+.btn_next {
+    right: 0;
+}
+
+.slider_sections {
+    position: relative;
+    top: -1.5rem;
+
+    display: flex;
+
+    width: 100%;
+    margin: 0 13rem;
+}
+
+.slider_item {
+    position: absolute;
+
+    text-align: center;
+
+    min-width: 100%;
+
+    opacity: 0;
+
+    transition: opacity .5s linear;
+}
+
+.active_slide {
+    opacity: 1;
+}
+
+.intro_title {
+    margin: 0 auto 1.5rem;
+
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.intro_text {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.slider_dots {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    position: absolute;
+    bottom: 2.7rem;
+    left: 0;
+    z-index: 1;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+
+    margin-right: 1rem;
+
+    border: 3.5px solid @white;
+    border-radius: 50%;
+
+    transition: background-color .5s linear;
+
+    cursor: pointer;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &.active_dot {
+        background-color: #00bac6;
+    }
+}
+
+
+/*----------- Media ------------*/
+.intro {
+    .breakpoint (@tablet,
+    {
+        .slider_inner {
+            span {
+                top: 18rem;
+            }
+        }
+
+        .slider_sections {
+            top: -3rem;
+        }
+
+        .intro_title {
+            font-size: 3.6rem;
+
+            max-width: 38rem;
+        }
+    });
+
+    .breakpoint (@mobile,
+    {
+        .slider_inner {
+            img {
+                max-width: 20px;
+            }
+        }
+
+        .slider_sections {
+            top: -4rem;
+            margin: 0 6rem;
+        }
+
+        .intro_title {
+            font-size: 3rem;
+            line-height: 1.1;
+        }
+
+        .intro_text {
+            font-size: 1.4rem
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            
+            border: 2.5px solid @white;
+        }
+    });
+}
+/*-----------/ Media ------------*/
+

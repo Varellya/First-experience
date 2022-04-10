@@ -1,0 +1,247 @@
+// main: ../style.less
+
+.about_inner {
+    padding-top: 5.5rem;
+
+    text-align: center;
+    
+    color: #9a9a9a;
+}
+
+.about_title {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #818181;
+
+    span {
+        font-weight: 700;
+        color: #646464;
+    }
+}
+
+.about_text {
+    padding: 2.5rem 0 4.5rem;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.about_services {
+    display: flex;
+
+    margin: 0 -1.7rem;
+}
+
+.services_item {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+
+    width: 100%;
+    margin: 0 1.7rem 12rem;
+
+    &:hover {
+        .item_content {
+            transform: translateY(3rem);
+        }
+
+        .cover {
+            opacity: 0;
+
+            &--active {
+                opacity: 1;
+            }
+        }
+
+        .active_item {
+            transform: translateY(-5rem);
+        }
+    }
+}
+
+.item_content {
+    transition: transform .2s linear;
+}
+
+.service_cover {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    height: 11rem;
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    height: 11rem;
+
+    opacity: 1;
+
+    transition: opacity .2s linear;
+
+    &--active {
+        opacity: 0;
+    }
+}
+
+.service_title {
+    margin: 1.6rem 0 1.2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #7b7b7b;
+}
+
+.service_description {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.active_item {
+    position: absolute;
+    bottom: -17.1rem;
+    z-index: -1;
+
+    width: 100%;
+    height: 5.1rem;
+
+    transition: transform .2s linear;
+}
+
+.arrow_active {
+    width: 8rem;
+    height: 5.1rem;
+    margin: auto;
+}
+
+
+/*--------- Media ----------*/
+.about {
+    .breakpoint (@tablet,
+    {
+        .about_title {
+            max-width: 50rem;
+            margin: auto;
+        }
+
+        .about_text {
+            padding: 1.8rem 0 3.5rem;
+        }
+
+        .services_item {
+            margin-bottom: 9rem;
+        }
+
+        .service_cover {
+            height: 9rem;
+        }
+        
+        .cover {
+            height: 9rem;
+        }
+
+        .service_title {
+            font-size: 1.8rem;
+        }
+        
+        .service_description {
+            font-size: 1.4rem;
+            line-height: 1.3;
+        }
+
+        .active_item {
+            position: absolute;
+            bottom: -14rem;
+
+            height: 3.5rem;
+        }
+    });
+
+    .breakpoint (@mobile,
+    {
+        .about_inner {
+            padding-top: 4rem;
+        }
+
+        .about_title {
+            max-width: 33rem;
+            margin: auto;
+
+            font-size: 2.6rem;
+        }
+
+        .about_text {
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+
+        .about_services {
+            display: block;
+
+            margin: 0;
+        }
+
+        .services_item {
+            margin-left: 0;
+            margin-bottom: 4rem;
+
+            &:hover {
+                .item_content {
+                    transform: translateY(1rem);
+                }
+            }
+        }
+
+        .item_content {
+            height: 10rem;
+            padding-left: 9rem;
+
+            text-align: left;
+        }
+
+        .service_cover {
+            position: absolute;
+            top: 0;
+            left: 3.25rem;
+            z-index: 1;
+
+            height: 6.5rem;
+        }
+
+        .cover {
+            height: 6.5rem;
+        }
+
+        .service_title {
+            margin-top: 0;
+            margin-bottom: 0.6rem;
+
+            font-size: 1.6rem;
+        }
+
+        .service_description {
+            font-size: 1.2rem;
+            line-height: 1.4;
+
+            max-height: 9rem;
+
+            overflow-y: auto;
+        }
+
+        .active_item {
+            display: none;
+        }
+    });
+}
+/*---------/ Media ----------*/
+

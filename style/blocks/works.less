@@ -1,0 +1,181 @@
+// main: ../style.less
+
+.works {
+    background-color: @bg-first;
+}
+
+.all_works {
+    display: flex;
+
+    position: relative;
+
+    flex-wrap: wrap;
+
+    margin-right: -2.5rem;
+    padding: 3.7rem 0 2.2rem;
+}
+
+.work_page {
+    width: 33.33%;
+}
+
+.work_inner {
+    display: flex;
+    flex-direction: column;
+
+    margin-right: 2.5rem;
+    margin-bottom: 2.5rem;
+
+    border: 1px solid #c5c5c5;
+
+    transition: box-shadow .2s linear, transform .2s linear;
+
+    &:hover {
+        box-shadow: 2px 1px 3px 2px #919191;
+        transform: scale(1.02);
+    }
+}
+
+.work_img {
+    display: flex;
+}
+
+.work_cover {
+    width: 100%;
+}
+
+.work_info {
+    position: relative;
+
+    margin: 1.8rem 2.2rem;
+
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        display: flex;
+
+        text-decoration: none;
+    }
+}
+
+.work_title {
+    font-weight: 700;
+    line-height: 1;
+    color: #717070;
+}
+
+.work_about {
+    margin-top: 2.2rem;
+    
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #818181;
+}
+
+.open_works {
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+
+    width: 100%;
+    padding-right: 25px;
+}
+
+.btn_works {
+    display: none;
+
+    padding: 1rem 1.2rem;
+    margin: 0 auto 2rem;
+    
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1;
+    color: #818181;
+
+    text-decoration: none;
+
+    border: 1px solid #818181;
+    border-radius: 20px;
+    background-color: @white;
+
+    transition: color .15s linear, background-color .15s linear;
+
+    &:hover {
+        color: @white;
+        background-color: #818181;
+    }
+}
+
+
+/*---------- Media -----------*/
+.works {
+    .breakpoint(@tablet,
+    {
+        .all_works {
+            display: flex;
+            flex-wrap: nowrap;
+
+            padding-bottom: 5.8rem;
+
+            overflow-x: hidden;
+
+            &.worksOpened {
+                flex-wrap: wrap;
+            }
+        }
+
+        .work_page {
+            min-width: 50%;
+        }
+
+        .open_works {
+            &.del_btn {
+                .btn_works {
+                    &--open {
+                        display: none;
+                    }
+            
+                    &--remove {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .btn_works {
+            &--open {
+                display: block;
+            }
+    
+            &--remove {
+                display: none;
+            }
+        }
+    });
+
+    .breakpoint (@mobile,
+    {
+        .work_info {
+            margin: .8rem 1rem;
+        }
+
+        .work_about {
+            margin-top: 1.8rem;
+
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .btn_works {
+            font-size: 1.3rem;
+        }
+    })
+}
+/*----------/ Media -----------*/
+

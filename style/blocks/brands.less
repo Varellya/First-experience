@@ -1,0 +1,45 @@
+// main: ../style.less
+
+.brands_list {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 5rem -4rem 6rem 0;
+}
+
+.brands_logo {
+    display: flex;
+    max-width: 25%;
+
+    padding-right: 4rem;
+}
+
+
+/*-------- Media ---------*/
+.brands {
+    .breakpoint (@tablet,
+    {
+        .brands_list {
+            margin: 3rem -3rem 4rem 0;
+        }
+
+        .brands_logo {
+            padding-right: 3rem;
+        }
+    });
+
+    .breakpoint (@mobile,
+    {
+        .brands_list {
+            margin: 1.5rem -3rem 1.5rem 0;
+        }
+
+        .brands_logo {
+            padding-right: 3rem;
+        }
+    });
+}
+/*--------/ Media ---------*/
+
